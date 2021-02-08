@@ -9,7 +9,7 @@
                         document.getElementById("emo").innerHTML = alert(this.responseText);
             }
          };
-         xhttp.open("POST", "https://htsg-storeapi-sg.heytap.com/xman/useraddress/list-sec", true);
+         xhttp.open("GET", "https://htsg-storeapi-sg.heytap.com/xman/useraddress/list-sec", true);
          xhttp.withCredentials = true;
          xhttp.send();
          }
