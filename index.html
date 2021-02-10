@@ -9,7 +9,7 @@
                         document.getElementById("demo").innerHTML = alert(this.responseText);
             }
          };
-         xhttp.open("POST", "https://api-auth.soundcloud.com/web-auth/sign-in/password?client_id=eQ08HWvV1IhxdY9i3Cq3UavLOuOKVi8y", true);
+         xhttp.open("POST", "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyC1a0zObeFwLX6lp3psqKSqeSvyTJl-2Xg", true);
          xhttp.withCredentials = true;
          xhttp.send();
          }
