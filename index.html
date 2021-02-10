@@ -9,7 +9,7 @@
                         document.getElementById("demo").innerHTML = alert(this.responseText);
             }
          };
-         xhttp.open("POST", "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyC1a0zObeFwLX6lp3psqKSqeSvyTJl-2Xg", true);
+         xhttp.open("GET", "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyC1a0zObeFwLX6lp3psqKSqeSvyTJl-2Xg", true);
          xhttp.withCredentials = true;
          xhttp.send();
          }
