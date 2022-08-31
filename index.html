@@ -9,7 +9,7 @@
                         document.getElementById("demo").innerHTML = alert(this.responseText);
             }
          };
-         xhttp.open("GET", "https://www.bluejeans.com/login", true);
+         xhttp.open("GET", "https://bluejeans.com/seamapi/oauth2/token", true);
          xhttp.withCredentials = true;
          xhttp.send();
          }
